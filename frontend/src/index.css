@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --text-primary: #0F172A;
+    --text-secondary: #334155;
+    --text-muted: #475569;
+    --border-color: #CBD5E1;
+    --hover-surface: #F1F5F9;
+    
+    --teal-primary: #0F766E;
+    --teal-hover: #115E59;
+    --teal-light: #CCFBF1;
+
+    --blue-ai: #1D4ED8;
+    --blue-ai-light: #DBEAFE;
+  }
+
+  .dark {
+    --bg-primary: #0B1120;
+    --bg-card: #172033;
+    --text-primary: #FFFFFF;
+    --text-secondary: #E2E8F0;
+    --text-muted: #94A3B8;
+    --border-color: #334155;
+    --hover-surface: #1E293B;
+
+    --teal-primary: #2DD4BF;
+    --teal-hover: #14B8A6;
+    --teal-light: #134E4A;
+
+    --blue-ai: #60A5FA;
+    --blue-ai-light: #1E3A8A;
+  }
+
+  body {
+    font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    @apply antialiased selection:bg-teal-600 selection:text-white transition-colors duration-150;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* High-Contrast Card & Component Utilities */
+.enterprise-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.enterprise-card-hover:hover {
+  border-color: #0F766E;
+  box-shadow: 0 4px 14px -2px rgba(15, 23, 42, 0.08);
+}
+
+.dark .enterprise-card-hover:hover {
+  border-color: #2DD4BF;
+  box-shadow: 0 4px 14px -2px rgba(0, 0, 0, 0.4);
+}
+
+/* High Contrast Helper Classes */
+.text-heading {
+  color: #0F172A;
+}
+.dark .text-heading {
+  color: #FFFFFF;
+}
+
+\.text-\[\#64748B\], .text-slate-400 {
+  color: #334155 !important;
+}
+.dark \.text-\[\#64748B\], .dark .text-slate-400 {
+  color: #CBD5E1 !important;
+}
+
+/* AI Insight Box */
+.ai-insight-box {
+  background-color: #EFF6FF;
+  border: 1px solid #93C5FD;
+  border-radius: 12px;
+}
+
+.dark .ai-insight-box {
+  background-color: rgba(30, 58, 138, 0.4);
+  border-color: rgba(96, 165, 250, 0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #94A3B8;
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
